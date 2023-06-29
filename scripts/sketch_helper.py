@@ -1,6 +1,7 @@
 import numpy as np
 import cv2
 import base64
+from typing import Tuple
 
     
 def count_high_freq_colors(image):
@@ -52,7 +53,7 @@ def create_binary_mask(img_arr, target_color):
     return binary_matrix
 
 
-def create_binary_matrix_base64(img_arr, target_color):
+def create_binary_matrix_base64(img_arr, target_color) -> Tuple[np.ndarray, str]:
     # Create mask of pixels with target color
     mask = np.all(img_arr == target_color, axis=-1)
 
